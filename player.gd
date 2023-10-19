@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 var is_jumping = false
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export var SPEED = 300.0
+@export var JUMP_VELOCITY = -400.0
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -16,9 +17,8 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	else:
 		is_jumping = false
-
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		is_jumping = true
 
