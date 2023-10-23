@@ -1,7 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnei3y6hmpvh2"]
+[gd_scene load_steps=14 format=3 uid="uid://cnei3y6hmpvh2"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_bu800"]
 [ext_resource type="Texture2D" uid="uid://dyxm5af8vxo46" path="res://assets/bazzabogan.png" id="1_yh2u3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v8is"]
+atlas = ExtResource("1_yh2u3")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ue3nh"]
 atlas = ExtResource("1_yh2u3")
@@ -29,6 +33,14 @@ region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kxndo"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4v8is")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ue3nh")
@@ -64,8 +76,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ytv3"]
-radius = 5.0
+radius = 4.0
 height = 14.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_momoq"]
+size = Vector2(10, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alyy8"]
+size = Vector2(10, 2)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_bu800")
@@ -75,8 +93,27 @@ JUMP_VELOCITY = -325.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_kxndo")
-animation = &"idle"
+animation = &"die"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_2ytv3")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_momoq")
+
+[node name="Feet" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Feet"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_alyy8")
+
+[node name="DeathTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
