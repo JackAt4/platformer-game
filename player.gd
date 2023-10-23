@@ -1,16 +1,17 @@
 extends CharacterBody2D
 
 var is_jumping = false
-
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
-
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
+func _ready():
+	add_to_group("Player")
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
