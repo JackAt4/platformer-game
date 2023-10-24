@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://0pa3pee8tomc"]
+[gd_scene load_steps=9 format=3 uid="uid://0pa3pee8tomc"]
 
 [ext_resource type="Texture2D" uid="uid://vi0bmtom8x2g" path="res://assets/brick.png" id="1_3s7li"]
 [ext_resource type="Texture2D" uid="uid://dw7ercv5432tk" path="res://assets/block.png" id="2_48nb1"]
 [ext_resource type="PackedScene" uid="uid://cnei3y6hmpvh2" path="res://player.tscn" id="3_ytbug"]
 [ext_resource type="PackedScene" uid="uid://b140ulvtk1tos" path="res://toad.tscn" id="4_mbtvj"]
+[ext_resource type="PackedScene" uid="uid://rj5x1gqc7t0a" path="res://big_toad.tscn" id="5_yk6fa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qcfix"]
 texture = ExtResource("1_3s7li")
@@ -45,3 +46,6 @@ drag_vertical_enabled = true
 
 [node name="Toad" parent="TileMap" instance=ExtResource("4_mbtvj")]
 position = Vector2(296, 504)
+
+[node name="big_toad" parent="." instance=ExtResource("5_yk6fa")]
+position = Vector2(456, 488)
