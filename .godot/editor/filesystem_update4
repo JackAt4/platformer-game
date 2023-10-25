@@ -1,5 +1,5 @@
-res://world.tscn
-res://player.tscn
-res://toad.tscn
-res://big_toad.tscn
-res://big_toad.gd
+res://scenes/world.tscn
+res://scenes/player.tscn
+res://scenes/coin.tscn
+res://scenes/world.gd
+res://scenes/toad.tscn
