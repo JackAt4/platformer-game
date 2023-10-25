@@ -3,3 +3,7 @@ res://scenes/player.tscn
 res://scenes/coin.tscn
 res://scenes/world.gd
 res://scenes/toad.tscn
+res://global.gd
+res://scenes/coin.gd
+res://coin_gui.gd
+res://scenes/coin_gui.tscn
