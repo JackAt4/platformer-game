@@ -30,7 +30,7 @@ texture = ExtResource("2_48nb1")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, 0.375, -0.375)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
 
 [sub_resource type="TileSet" id="TileSet_6318i"]
 physics_layer_0/collision_layer = 1

@@ -1,10 +1,11 @@
+Button
+CanvasLayer
 Label
 Camera2D
 ColorRect
 TileMap
 CollisionShape2D
 Area2D
-CanvasLayer
 AudioStreamPlayer2D
 Sprite2D
 RayCast2D
