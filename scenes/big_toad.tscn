@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://rj5x1gqc7t0a"]
 
-[ext_resource type="Script" path="res://big_toad.gd" id="1_6rcsc"]
+[ext_resource type="Script" path="res://scenes/big_toad.gd" id="1_6rcsc"]
 [ext_resource type="Texture2D" uid="uid://b0osea2mkesf2" path="res://assets/toad2.png" id="1_c0xsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pc52c"]
