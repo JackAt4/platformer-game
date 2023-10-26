@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cykqqrf67uy1v"]
+[gd_scene load_steps=10 format=3 uid="uid://cykqqrf67uy1v"]
 
 [ext_resource type="Script" path="res://scenes/underworld.gd" id="1_u1qh8"]
 [ext_resource type="Texture2D" uid="uid://55458bc0a8k4" path="res://assets/lvl2-block.png" id="1_y3e3u"]
 [ext_resource type="Texture2D" uid="uid://s23onq1k1lm4" path="res://assets/lvl2-brick.png" id="2_bfxqb"]
 [ext_resource type="PackedScene" uid="uid://cnei3y6hmpvh2" path="res://scenes/player.tscn" id="3_ioulp"]
+[ext_resource type="PackedScene" uid="uid://co0nbisvu4jxs" path="res://scenes/coin_gui.tscn" id="5_8x0cs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gyi4f"]
 texture = ExtResource("1_y3e3u")
@@ -64,5 +65,7 @@ offset_top = -43.0
 offset_right = 1384.0
 offset_bottom = 967.0
 color = Color(0, 0, 0, 1)
+
+[node name="coin_gui" parent="." instance=ExtResource("5_8x0cs")]
 
 [connection signal="body_entered" from="TileMap/interact" to="." method="_on_interact_body_entered"]
