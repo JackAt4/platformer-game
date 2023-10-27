@@ -1,10 +1,8 @@
+res://scenes/questionblock.tscn
+res://scenes/questionblock.gd
+res://scenes/global.gd
+res://scenes/beer.tscn
+res://scenes/beer.gd
 res://scenes/world.tscn
 res://scenes/underworld.tscn
-res://scenes/global.gd
-res://scenes/player.gd
-res://scenes/coin_gui.tscn
 res://scenes/coin_gui.gd
-res://scenes/start_screen.gd
-res://scenes/start_screen.tscn
-res://scenes/gameover.tscn
-res://scenes/gameover.gd
