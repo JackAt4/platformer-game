@@ -101,5 +101,8 @@ shape = SubResource("CircleShape2D_4fe0i")
 [node name="questionblock" parent="." instance=ExtResource("10_r3ga1")]
 position = Vector2(120, 488)
 
+[node name="questionblock2" parent="." instance=ExtResource("10_r3ga1")]
+position = Vector2(88, 488)
+
 [connection signal="body_entered" from="TileMap/interact" to="." method="_on_interact_body_entered"]
 [connection signal="body_entered" from="Transition" to="." method="_on_transition_body_entered"]

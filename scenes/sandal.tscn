@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://t5o36x1yghqo"]
+
+[ext_resource type="Texture2D" uid="uid://cx2jtrrexcore" path="res://assets/sandal.png" id="1_dtly4"]
+[ext_resource type="Script" path="res://Sandal.gd" id="1_jj2rj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qwxc"]
+atlas = ExtResource("1_dtly4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v04le"]
+atlas = ExtResource("1_dtly4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gw8e"]
+atlas = ExtResource("1_dtly4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toqje"]
+atlas = ExtResource("1_dtly4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk2pm"]
+atlas = ExtResource("1_dtly4")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_the1r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qwxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v04le")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gw8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toqje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tk2pm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xu4rw"]
+radius = 3.0
+height = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xh1ih"]
+radius = 9.05539
+
+[node name="Sandal" type="Area2D"]
+script = ExtResource("1_jj2rj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_the1r")
+frame_progress = 0.158954
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_xu4rw")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_xh1ih")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
