@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bh1uummp80n7n"]
 
 [ext_resource type="Script" path="res://scenes/start_screen.gd" id="1_bwacr"]
-[ext_resource type="Texture2D" uid="uid://bewxupvq57ne6" path="res://assets/title.png" id="2_la6a5"]
+[ext_resource type="Texture2D" uid="uid://5kdrglkgxudv" path="res://assets/title.png" id="2_la6a5"]
 
 [node name="start_screen" type="CanvasLayer"]
 script = ExtResource("1_bwacr")
@@ -21,6 +21,11 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 46
 text = "Start"
 
+[node name="Title" type="Sprite2D" parent="Start"]
+position = Vector2(139, -166)
+scale = Vector2(12, 12)
+texture = ExtResource("2_la6a5")
+
 [node name="Quit" type="Button" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -35,10 +40,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 46
 text = "Quit"
-
-[node name="Title" type="Sprite2D" parent="."]
-position = Vector2(580, 163)
-texture = ExtResource("2_la6a5")
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

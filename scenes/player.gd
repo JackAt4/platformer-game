@@ -60,6 +60,7 @@ func update_animation(direction):
 				animated_sprite_2d.play("jump")
 			elif direction != 0:
 				animated_sprite_2d.flip_h = (direction < 0)
+				player_direction = direction
 				animated_sprite_2d.play("run")
 			else:
 				animated_sprite_2d.play("idle")
@@ -68,6 +69,7 @@ func update_animation(direction):
 				animated_sprite_2d.play("sandal_jump")
 			elif direction != 0:
 				animated_sprite_2d.flip_h = (direction < 0)
+				player_direction = direction
 				animated_sprite_2d.play("sandal_run")
 			else:
 				animated_sprite_2d.play("sandal_idle")
@@ -88,6 +90,7 @@ func die():
 		
 	is_dying = true
 	animated_sprite_2d.play("die")
+	$DeathSound.play()
 	await move_player_up_and_down()
 	Global.player_lives -= 1
 	
@@ -115,7 +118,7 @@ func on_DeathTimer_timeout():
 
 func become_big():
 	Global.current_state = Global.PlayerState.BIG
-	self.scale = Vector2(1.5, 1.5)
+	self.scale = Vector2(1.1, 1.1)
 	
 func become_small():
 	Global.current_state = Global.PlayerState.SMALL
@@ -127,15 +130,15 @@ func got_sandal():
 #Inside fire_sandal function
 func fire_sandal():
 	is_firing_sandal = true
-	print("firing sandal")
 	var sandal = load("res://scenes/sandal.tscn").instantiate()
-	sandal.global_position = Vector2(self.global_position.x, self.global_position.y - 15)
-
+	sandal.global_position = Vector2(self.global_position.x, self.global_position.y)
 	sandal.set("velocity", Vector2(500 * player_direction, 0))
-	print("Sandal fired")
 	get_parent().add_child(sandal)
 	$AnimatedSprite2D.play("sandal_fire")
-	sandal_fire_timer.start(1.0)
+	sandal_fire_timer.start(0.3)
 
 func _on_SandalFireTimer_timeout():
 	is_firing_sandal = false
+
+func HitSound():
+	$HitSound.play()

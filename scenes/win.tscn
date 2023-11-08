@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbs3bq3a6fqns"]
+
+[ext_resource type="Script" path="res://scenes/gameover.gd" id="1_0k6l5"]
+[ext_resource type="Texture2D" uid="uid://fgbtsjr712aw" path="res://assets/win.png" id="2_t34jp"]
+
+[node name="gameover" type="CanvasLayer"]
+script = ExtResource("1_0k6l5")
+
+[node name="start" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = 5.0
+offset_right = 138.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 46
+text = "Play Again"
+
+[node name="Win" type="Sprite2D" parent="start"]
+texture_filter = 1
+position = Vector2(259, -156)
+texture = ExtResource("2_t34jp")
+
+[node name="quit" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = 96.425
+offset_right = 138.0
+offset_bottom = 175.425
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 46
+text = "Quit"
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

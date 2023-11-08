@@ -26,6 +26,7 @@ func update_animation():
 	
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("Player"):
+		body.HitSound()
 		body.velocity.y = -200
 		is_alive = false
 		queue_free()

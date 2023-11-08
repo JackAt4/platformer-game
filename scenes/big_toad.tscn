@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://rj5x1gqc7t0a"]
+[gd_scene load_steps=15 format=3 uid="uid://rj5x1gqc7t0a"]
 
 [ext_resource type="Script" path="res://scenes/big_toad.gd" id="1_6rcsc"]
 [ext_resource type="Texture2D" uid="uid://b0osea2mkesf2" path="res://assets/toad2.png" id="1_c0xsp"]
+[ext_resource type="AudioStream" uid="uid://b2uqjrsd20nbd" path="res://assets/hitHurt.wav" id="3_00a0g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pc52c"]
 atlas = ExtResource("1_c0xsp")
@@ -94,5 +95,8 @@ shape = SubResource("RectangleShape2D_3gj7k")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(-10, -1)
 target_position = Vector2(0, 15)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_00a0g")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

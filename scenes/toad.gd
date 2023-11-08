@@ -22,10 +22,9 @@ func _physics_process(delta):
 func update_animation():
 	animated_sprite_2d.play("hop")
 	
-
-
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("Player"):
+		body.HitSound()
 		body.velocity.y = -200
 		is_alive = false
 		queue_free()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1oaume8a4lpg"
-path="res://.godot/imported/bazzalargesandals.png-1dd35a7915a1df61fcf1e9e1c27d74a7.ctex"
+uid="uid://mwdaafahhtp4"
+path="res://.godot/imported/blake.png.png-7fe02f9b1d4c52a2aaae2bd30dda0188.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bazzalargesandals.png"
-dest_files=["res://.godot/imported/bazzalargesandals.png-1dd35a7915a1df61fcf1e9e1c27d74a7.ctex"]
+source_file="res://assets/blake.png.png"
+dest_files=["res://.godot/imported/blake.png.png-7fe02f9b1d4c52a2aaae2bd30dda0188.ctex"]
 
 [params]
 

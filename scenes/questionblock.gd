@@ -17,9 +17,9 @@ func bump_block():
 	
 	match Global.current_state:
 		Global.PlayerState.SMALL:
-			Global.spawn_beer_bottle(self.global_position + Vector2(0, -20))
+			Global.spawn_beer_bottle.call_deferred(self.global_position + Vector2(0, -20))
 		Global.PlayerState.BIG, Global.PlayerState.SANDAL:
-			Global.spawn_sandal_powerup(self.global_position + Vector2(0, -30))
+			Global.spawn_sandal_powerup.call_deferred(self.global_position + Vector2(0, -20))
 	
 	bump_upwards()
 	var timer = get_tree().create_timer(0.2)
